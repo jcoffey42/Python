@@ -5,13 +5,22 @@
 import time
 
 # Define global variables
+
 # Open the statistics file for writing as "output"
 output = open("c:\data\stats.txt", "a") 
-pacific = ["5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","0","1","2","3","4"] 
 
+# comment out the timezone list as appropriate
+# This list is the conversion of GMT to PacificDST (-7)
+pacific = ["17","18","19","20","21","22","23","0 ","1 ","2 ","3 ","4 ","5 ","6 ","7 ","8 ","9 ","10","11","12","13","14","15","16"]
+# This list is the conversion of GMT to PacificSTD (-8)
+#pacific = ["16","17","18","19","20","21","22","23","0 ","1 ","2 ","3 ","4 ","5 ","6 ","7 ","8 ","9 ","10","11","12","13","14","15"]
+
+# The list below is for reference only
+# GMT      ["0 ","1 "," 2","3 ","4 ","5 ","6 ","7 ","8 ","9 ","10","11","12","13","14","15","16","17","18","19","20","21","22","23"]
 
 
 #Then we setup the functions
+
 def statrm11(): #define a function 
     # This function is for Informational, brief - in person
     # Get the current date (information as listed
@@ -21,9 +30,10 @@ def statrm11(): #define a function
     d = time.strftime("%d", time.gmtime()) # get day of month
     Y = time.strftime("%Y", time.gmtime()) # get Year
     j = time.strftime("%j", time.gmtime()) # get julian day
-    H = pacific[int(h)] # adjust for timezone
+    H = pacific[int(h)] # Adjust for timezone by converting h to an integer and putting the value from list pacific(h) in H, the hour variable
+    
     # Prep the statistics line
-    export= str("{},{},{},{},{},{},{},\n").format(roption,j,Y,m,d,H,M)
+    export= str("{},{},{},{},{},{},{},\n").format(roption,j,Y,m,d,H,M) # Build the entry for the statistics file
     print export # For debugging
     output.write(export)# Write one line to statistics file
 
@@ -39,7 +49,7 @@ def statrm12(): #define a function
     H = pacific[int(h)] # adjust for timezone
 
     # Prep the statistics line
-    export= str("{},{},{},{},{},{},{},\n").format(roption,j,Y,m,d,H,M)
+    export= str("{},{},{},{},{},{},{},\n").format(roption,j,Y,m,d,H,M)  # Build the entry for the statistics file
     print export # For debugging
 
     output.write(export)# Write one line to statistics file
@@ -56,7 +66,7 @@ def statrm13(): #define a function with the variable to pass on inside ()
     H = pacific[int(h)] # adjust for timezone
      
     # Prep the statistics line
-    export= str("{},{},{},{},{},{},{},\n").format(roption,j,Y,m,d,H,M)
+    export= str("{},{},{},{},{},{},{},\n").format(roption,j,Y,m,d,H,M)  # Build the entry for the statistics file
     print export # For debugging
 
     output.write(export)# Write one line to statistics file
@@ -75,7 +85,7 @@ def statrm14(): #define a function with the variable to pass on inside ()
     H = pacific[int(h)] # adjust for timezone
 
     # Prep the statistics line
-    export= str("{},{},{},{},{},{},{},\n").format(roption,j,Y,m,d,H,M)
+    export= str("{},{},{},{},{},{},{},\n").format(roption,j,Y,m,d,H,M)  # Build the entry for the statistics file
     print export # For debugging
 
     output.write(export)# Write one line to statistics file
@@ -93,7 +103,7 @@ def statrm21(): #define a function with the variable to pass on inside ()
     H = pacific[int(h)] # adjust for timezone
 
     # Prep the statistics line
-    export= str("{},{},{},{},{},{},{},\n").format(roption,j,Y,m,d,H,M)
+    export= str("{},{},{},{},{},{},{},\n").format(roption,j,Y,m,d,H,M)  # Build the entry for the statistics file
     print export # For debugging
 
     output.write(export)# Write one line to statistics file
@@ -101,7 +111,7 @@ def statrm21(): #define a function with the variable to pass on inside ()
 def statrm22(): #define a function with the variable to pass on inside ()
 
 
-     # This function is for Informational, extended - on phone
+    # This function is for Informational, extended - on phone
     # Get the current date (information as listed
     h = time.strftime("%H", time.gmtime()) # get Hour
     M = time.strftime("%M", time.gmtime()) # get Minute
@@ -112,7 +122,7 @@ def statrm22(): #define a function with the variable to pass on inside ()
     H = pacific[int(h)] # adjust for timezone
 
     # Prep the statistics line
-    export= str("{},{},{},{},{},{},{},\n").format(roption,j,Y,m,d,H,M)
+    export= str("{},{},{},{},{},{},{},\n").format(roption,j,Y,m,d,H,M)  # Build the entry for the statistics file
     print export # For debugging
 
     output.write(export)# Write one line to statistics file
@@ -131,7 +141,7 @@ def statrm23(): #define a function with the variable to pass on inside ()
     H = pacific[int(h)] # adjust for timezone
 
     # Prep the statistics line
-    export= str("{},{},{},{},{},{},{},\n").format(roption,j,Y,m,d,H,M)
+    export= str("{},{},{},{},{},{},{},\n").format(roption,j,Y,m,d,H,M)  # Build the entry for the statistics file
     print export # For debugging
 
     output.write(export)# Write one line to statistics file
@@ -149,15 +159,18 @@ def statrm24(): #define a function with the variable to pass on inside ()
     H = pacific[int(h)] # adjust for timezone
 
     # Prep the statistics line
-    export= str("{},{},{},{},{},{},{},\n").format(roption,j,Y,m,d,H,M)
+    export= str("{},{},{},{},{},{},{},\n").format(roption,j,Y,m,d,H,M)  # Build the entry for the statistics file
     print export # For debugging
 
     output.write(export)# Write one line to statistics file
     
 
-# Below is the menu selection 
+# Below is the menu selection
+
 ans = True #Prime ans for the while, menu entry, loop
+
 while ans :
+    # The menu display
           print """
        What Service did you render?
        
@@ -175,12 +188,14 @@ while ans :
 	   Please enter two digits, first the reference type then the interaction type. 
 	   ex. 14 for Information by email.
                 """
-          roption = "11" # Preload roption
-          roption = raw_input("Please make a selection ",)    # make a choice
+          roption = "11" # Declare and preload roption
+          
+          roption = raw_input("Please make a selection ",)    # Input a choice
+
           try:                          # setup to handle enter without entry
-                option = int(roption) # make sure menu entry is number
-                if option == 11:       #test for one
-                        statrm11()   #Call the defined function statrmXX
+                option = int(roption)   # make sure menu entry is number
+                if option == 11:        #test for 11, if not 11 continue down test tree
+                        statrm11()      #Call the defined function statrmXX
                 elif option == 12:
                         statrm12()
                 elif option == 13:
@@ -195,13 +210,13 @@ while ans :
                         statrm23()
                 elif option == 24:
                         statrm24()		
-                elif option ==  9:     #test for nine
+                elif option ==  9:     #test for nine, end program cleanly
                         print "Find your data file at c:\data\statistics.txt"
                         ans = False # That's all folks!
-                else:                 # what to do if not tested
+                else:                  # what to do if entry not a tested value
                         print "oops, try again!" 
-          except ValueError:            # how to deal with no entry at all
+          except ValueError:           # how to deal with no entry or wrong type of entry
                         print "oops, try again!!"
 
-output.close() # be nice and close the file
+output.close() # Be nice and close the file
         
