@@ -111,7 +111,6 @@ while ans :
                 elif option ==  9:     #test for nine, end program cleanly
                         ans = False    # That's all folks!
                 elif option == 99:     #test for nine, end program cleanly
-                        
                         ans = False    # That's all folks!
                 else:                  # what to do if entry not a tested value
                         print "oops, try again!" 
