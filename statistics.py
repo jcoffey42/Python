@@ -53,11 +53,13 @@ while ans :
     # The menu display
           print """
        What Service did you render?
-       
+                       Reference type
        1X- Informational - Brief (Hours, policy, looking up single item in catalog)
        2X- Informational - Extended (Searching stacks, ILL help, holds, reserves, finding classrooms)
        3X- Reference (Multistep search for materials/resources)
        4X- Point of Service Instruction (How to search catalog/databases, citing sources, editing, formatting)
+
+                       Interaction type
        X1- In person
        X2- By Phone
        X3- Chat (Real Time)
@@ -65,12 +67,12 @@ while ans :
         9- Quit
 
 	   
-	   Please enter two digits, first the reference type then the interaction type. 
+	   Please enter two digits, first the reference type then the interaction type and press enter. 
 	   ex. 14 for Information by email.
                 """
-          roption = "11" # Declare and preload roption
+          roption = "11"   # Declare and preload roption
           
-          roption = raw_input("Please make a selection ",)    # Input a choice, prefaced with a message
+          roption = raw_input("Please make a selection ",)    # Input a choice, prefaced with a message, and place in roption
 
           try:                          # setup to handle enter without entry
                 option = int(roption)   # make sure menu entry is number
@@ -107,12 +109,17 @@ while ans :
                 elif option == 44:
                         savestat()
                 elif option ==  9:     #test for nine, end program cleanly
-                        print "Find your data file at c:\data\statistics.txt"
-                        ans = False # That's all folks!
+                        ans = False    # That's all folks!
+                elif option == 99:     #test for nine, end program cleanly
+                        
+                        ans = False    # That's all folks!
                 else:                  # what to do if entry not a tested value
                         print "oops, try again!" 
           except ValueError:           # how to deal with no entry or wrong type of entry
                         print "oops, try again!!"
 
-output.close() # Be nice and close the file
+print """
+Find your data file at c:\data\statistics.txt
+The record format is statistic,julian date,year,month,day,hour(24),minute
+      """
         
