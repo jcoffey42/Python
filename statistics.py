@@ -6,8 +6,7 @@ import time
 
 # Define global variables
 
-# Open the statistics file for writing as "output"
-output = open("c:\data\stats.txt", "a") 
+
 
 # comment out the timezone list as appropriate
 # This list is the conversion of GMT to PacificDST (-7)
@@ -21,8 +20,13 @@ pacific = ["17","18","19","20","21","22","23","0 ","1 ","2 ","3 ","4 ","5 ","6 "
 
 #Then we setup the functions
 
-def statrm11(): #define a function 
-    # This function is for Informational, brief - in person
+def savestat(): #define a function 
+    # This function is to gather the current date and time
+    # and build the data string to write to the statistics file
+
+    # Open the statistics file for writing as "output"
+    output = open("c:\data\stats.txt", "a")
+
     # Get the current date (information as listed
     h = time.strftime("%H", time.gmtime()) # get Hour
     M = time.strftime("%M", time.gmtime()) # get Minute
@@ -37,133 +41,9 @@ def statrm11(): #define a function
     print export # For debugging
     output.write(export)# Write one line to statistics file
 
-def statrm12(): #define a function 
-    # This function is for Informational, brief - on phone
-    # Get the current date (information as listed
-    h = time.strftime("%H", time.gmtime()) # get Hour
-    M = time.strftime("%M", time.gmtime()) # get Minute
-    m = time.strftime("%m", time.gmtime()) # get month
-    d = time.strftime("%d", time.gmtime()) # get day of month
-    Y = time.strftime("%Y", time.gmtime()) # get Year
-    j = time.strftime("%j", time.gmtime()) # get julian day
-    H = pacific[int(h)] # adjust for timezone
+    # Be nice and close the file to keep file up to date and avoid data loss
+    output.close() 
 
-    # Prep the statistics line
-    export= str("{},{},{},{},{},{},{},\n").format(roption,j,Y,m,d,H,M)  # Build the entry for the statistics file
-    print export # For debugging
-
-    output.write(export)# Write one line to statistics file
-    
-def statrm13(): #define a function with the variable to pass on inside ()
-    # This function is for Informational, brief - by chat
-    # Get the current date (information as listed
-    h = time.strftime("%H", time.gmtime()) # get Hour
-    M = time.strftime("%M", time.gmtime()) # get Minute
-    m = time.strftime("%m", time.gmtime()) # get month
-    d = time.strftime("%d", time.gmtime()) # get day of month
-    Y = time.strftime("%Y", time.gmtime()) # get Year
-    j = time.strftime("%j", time.gmtime()) # get julian day
-    H = pacific[int(h)] # adjust for timezone
-     
-    # Prep the statistics line
-    export= str("{},{},{},{},{},{},{},\n").format(roption,j,Y,m,d,H,M)  # Build the entry for the statistics file
-    print export # For debugging
-
-    output.write(export)# Write one line to statistics file
-    
-    
-def statrm14(): #define a function with the variable to pass on inside ()
-
-    # This function is for Informational, brief - by email
-    # Get the current date (information as listed
-    h = time.strftime("%H", time.gmtime()) # get Hour
-    M = time.strftime("%M", time.gmtime()) # get Minute
-    m = time.strftime("%m", time.gmtime()) # get month
-    d = time.strftime("%d", time.gmtime()) # get day of month
-    Y = time.strftime("%Y", time.gmtime()) # get Year
-    j = time.strftime("%j", time.gmtime()) # get julian day
-    H = pacific[int(h)] # adjust for timezone
-
-    # Prep the statistics line
-    export= str("{},{},{},{},{},{},{},\n").format(roption,j,Y,m,d,H,M)  # Build the entry for the statistics file
-    print export # For debugging
-
-    output.write(export)# Write one line to statistics file
-    
-def statrm21(): #define a function with the variable to pass on inside ()
-
-    # This function is for Informational, extended - in person
-    # Get the current date (information as listed
-    h = time.strftime("%H", time.gmtime()) # get Hour
-    M = time.strftime("%M", time.gmtime()) # get Minute
-    m = time.strftime("%m", time.gmtime()) # get month
-    d = time.strftime("%d", time.gmtime()) # get day of month
-    Y = time.strftime("%Y", time.gmtime()) # get Year
-    j = time.strftime("%j", time.gmtime()) # get julian day
-    H = pacific[int(h)] # adjust for timezone
-
-    # Prep the statistics line
-    export= str("{},{},{},{},{},{},{},\n").format(roption,j,Y,m,d,H,M)  # Build the entry for the statistics file
-    print export # For debugging
-
-    output.write(export)# Write one line to statistics file
-    
-def statrm22(): #define a function with the variable to pass on inside ()
-
-
-    # This function is for Informational, extended - on phone
-    # Get the current date (information as listed
-    h = time.strftime("%H", time.gmtime()) # get Hour
-    M = time.strftime("%M", time.gmtime()) # get Minute
-    m = time.strftime("%m", time.gmtime()) # get month
-    d = time.strftime("%d", time.gmtime()) # get day of month
-    Y = time.strftime("%Y", time.gmtime()) # get Year
-    j = time.strftime("%j", time.gmtime()) # get julian day
-    H = pacific[int(h)] # adjust for timezone
-
-    # Prep the statistics line
-    export= str("{},{},{},{},{},{},{},\n").format(roption,j,Y,m,d,H,M)  # Build the entry for the statistics file
-    print export # For debugging
-
-    output.write(export)# Write one line to statistics file
-    
-def statrm23(): #define a function with the variable to pass on inside ()
-
-
-    # This function is for Informational, extended - by chat
-    # Get the current date (information as listed
-    h = time.strftime("%H", time.gmtime()) # get Hour
-    M = time.strftime("%M", time.gmtime()) # get Minute
-    m = time.strftime("%m", time.gmtime()) # get month
-    d = time.strftime("%d", time.gmtime()) # get day of month
-    Y = time.strftime("%Y", time.gmtime()) # get Year
-    j = time.strftime("%j", time.gmtime()) # get julian day
-    H = pacific[int(h)] # adjust for timezone
-
-    # Prep the statistics line
-    export= str("{},{},{},{},{},{},{},\n").format(roption,j,Y,m,d,H,M)  # Build the entry for the statistics file
-    print export # For debugging
-
-    output.write(export)# Write one line to statistics file
-    
-def statrm24(): #define a function with the variable to pass on inside ()
-
-    # This function is for Informational, extended - by email
-    # Get the current date (information as listed
-    h = time.strftime("%H", time.gmtime()) # get Hour
-    M = time.strftime("%M", time.gmtime()) # get Minute
-    m = time.strftime("%m", time.gmtime()) # get month
-    d = time.strftime("%d", time.gmtime()) # get day of month
-    Y = time.strftime("%Y", time.gmtime()) # get Year
-    j = time.strftime("%j", time.gmtime()) # get julian day
-    H = pacific[int(h)] # adjust for timezone
-
-    # Prep the statistics line
-    export= str("{},{},{},{},{},{},{},\n").format(roption,j,Y,m,d,H,M)  # Build the entry for the statistics file
-    print export # For debugging
-
-    output.write(export)# Write one line to statistics file
-    
 
 # Below is the menu selection
 
@@ -190,26 +70,42 @@ while ans :
                 """
           roption = "11" # Declare and preload roption
           
-          roption = raw_input("Please make a selection ",)    # Input a choice
+          roption = raw_input("Please make a selection ",)    # Input a choice, prefaced with a message
 
           try:                          # setup to handle enter without entry
                 option = int(roption)   # make sure menu entry is number
                 if option == 11:        #test for 11, if not 11 continue down test tree
-                        statrm11()      #Call the defined function statrmXX
-                elif option == 12:
-                        statrm12()
+                        savestat()      #Call the defined function savestat
+                elif option == 12:      # This seems like the simplest way to test the input for valid entrys
+                        savestat()      # and go on to the savestat function, writing the choice to the file
                 elif option == 13:
-                        statrm13()
+                        savestat()
                 elif option == 14:
-                        statrm14()
+                        savestat()
                 elif option == 21:
-                        statrm21()
+                        savestat()
                 elif option == 22:
-                        statrm22()
+                        savestat()
                 elif option == 23:
-                        statrm23()
+                        savestat()
                 elif option == 24:
-                        statrm24()		
+                        savestat()
+                elif option == 31:
+                        savestat()
+                elif option == 32:
+                        savestat()
+                elif option == 33:
+                        savestat()
+                elif option == 34:
+                        savestat()
+                elif option == 41:
+                        savestat()
+                elif option == 42:
+                        savestat()
+                elif option == 43:
+                        savestat()
+                elif option == 44:
+                        savestat()
                 elif option ==  9:     #test for nine, end program cleanly
                         print "Find your data file at c:\data\statistics.txt"
                         ans = False # That's all folks!
