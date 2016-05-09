@@ -1,7 +1,7 @@
 #!/usr/bin/python
 ######################################################
-## Create  a pulsing spiral lighing each led        ##
-## Version 1 using a method I saw in another script ##                                         ##
+## Create  a pulsing spiral lighting each led       ##
+## Version 1 using a method I saw in another script ##
 ##                                                  ##
 ######################################################
 
